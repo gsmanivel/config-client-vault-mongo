@@ -9,5 +9,4 @@ public class ConfigClientVaultMongoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ConfigClientVaultMongoApplication.class, args);
 	}
-
 }
