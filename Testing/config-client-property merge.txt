@@ -218,3 +218,43 @@ AppProperties
 }
 
 ---------------------------------------------------------------------------------------
+
+
+06 - May:
+
+When where is no secret in the path: manman/uat
+If we use path method to create secrets, getting error message as 
+
+Postman:
+ "status": 500,
+ "error": "Internal Server Error",
+
+Application:
+org.springframework.vault.core.SecretNotFoundException: No data found at secret/data/manman/uat; patch only works on existing data
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Have some secret value in the vault as mentioned below
+
+Path=manman/uat
+Secret Value: 
+
+{
+  "db_name": "users",
+  "password": "passw0rd"
+}
+
+Add third value newly to secret using http patch method:
+
+http://localhost:8088/secret?strPath=manman/uat
+{
+  "url": "sample url"
+}
+
+then response:
+{
+  "db_name": "users",
+  "password": "passw0rd",
+  "url": "sample url"
+}
+--------------------------------------------------------------------------------------------------------------------------------------------------------
