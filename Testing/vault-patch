@@ -1,0 +1,11 @@
+curl --location --request PATCH 'http://127.0.0.1:8200/v1/secret/data/gateway/dev' \
+--header 'X-Vault-Token: hvs.CAESICX7k8nH3BaqNcZluX7rvafM-132wie7qR_xuhAMTxI6Gh4KHGh2cy40WHUzemJ1WnFMb0p5NVY2dkRpU0huS1o' \
+--header 'Content-Type: application/merge-patch+json' \
+--data-raw '{
+  "options": {
+    "cas": 0
+  },
+  "data": {
+    "dbpw": "dev-roosft" 
+  }
+}'
